@@ -1,5 +1,23 @@
 # VoteChain — Blockchain-Based Secure Voting System
 
+## Vote Chain: A Decentralized Commit–Reveal Voting Framework Using Ethereum Smart Contracts and Cryptographic  Hash Verification - Research Paper
+
+## Authors
+
+## Mihit Nanda1
+
+## Gaurav Singhania
+
+## Manya Agarwal
+
+## Mohammad Zeeshan
+
+## Mudit Tiwari
+
+## Md Jawed Akram
+
+School of Computer Science and Engineering, IILM University, Greater Noida, Uttar Pradesh, India
+
 **B.Tech CSE Project | IILM University, Greater Noida**
 Built with Ethereum · Solidity · Hardhat · React.js · Ethers.js · MetaMask
 
@@ -14,7 +32,7 @@ blockchain-voting/
 ├── scripts/
 │   └── deploy.js                 # Deployment script
 ├── test/
-│   └── VotingSystem.test.js      # 10 unit tests (Chai + Hardhat)
+│   └── VotingSystem.test.js      # 14 unit tests (Chai + Hardhat) + gas analysis
 ├── hardhat.config.js
 ├── package.json
 └── frontend/
@@ -38,6 +56,7 @@ blockchain-voting/
 ## Setup & Running (Step-by-Step)
 
 ### Prerequisites
+
 - Node.js v18+ installed
 - MetaMask browser extension installed
 - Git (optional)
@@ -60,6 +79,7 @@ npx hardhat compile
 ```
 
 Expected output:
+
 ```
 Compiled 1 Solidity file successfully
 ```
@@ -89,6 +109,7 @@ This starts a local Ethereum network at `http://127.0.0.1:8545` with 20 funded t
 **Important:** Copy one of the private keys printed in the output — you'll need it for MetaMask.
 
 Example output:
+
 ```
 Account #0: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 (10000 ETH)
 Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
@@ -105,6 +126,7 @@ npx hardhat run scripts/deploy.js --network localhost
 ```
 
 Expected output:
+
 ```
 Deploying with account: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 ✅ VotingSystem deployed at: 0x5FbDB2315678afecb367f032d93F642f64180aa3
@@ -156,6 +178,7 @@ Frontend opens at `http://localhost:3000`
 ### As Voter (Any other account)
 
 **Commit Phase:**
+
 1. Connect a different MetaMask account (Account #1, #2, etc.)
 2. Open the election
 3. Select a candidate and enter a **secret phrase** (e.g. `mysecret123`)
@@ -163,6 +186,7 @@ Frontend opens at `http://localhost:3000`
 5. Check the confirmation box and click **Commit Vote**
 
 **Reveal Phase:**
+
 1. Select the same candidate you committed to
 2. Enter the exact same secret phrase
 3. Click **Reveal Vote** — your vote is now counted
@@ -181,6 +205,7 @@ Reveal:  Submit candidateId + secret
 ```
 
 This ensures:
+
 - Votes are hidden during the commit phase (prevents influence)
 - Votes are verifiable during reveal
 - Invalid reveals (wrong candidate/secret) are rejected
@@ -211,6 +236,6 @@ This ensures:
 
 ## GitHub Repository
 
-https://github.com/mihiit/
+<https://github.com/mihiit/blockchain-voting-system>
 
 ---
