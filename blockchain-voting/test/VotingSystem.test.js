@@ -110,10 +110,16 @@ describe("VotingSystem", function () {
 
       const secret = ethers.encodeBytes32String("secret1");
       const hash = await voting.generateCommitHash(1, secret);
-      await voting.connect(voter1).commitVote(id, hash);
+      // Measure COMMIT gas
+       const txCommit = await voting.connect(voter1).commitVote(id, hash);
+       const receiptCommit = await txCommit.wait();
+       console.log("Commit Gas:", receiptCommit.gasUsed.toString());
 
       await voting.advancePhase(id); // → RevealPhase
-      await voting.connect(voter1).revealVote(id, 1, secret);
+      // Measure REVEAL gas
+       const txReveal = await voting.connect(voter1).revealVote(id, 1, secret);
+       const receiptReveal = await txReveal.wait();
+       console.log("Reveal Gas:", receiptReveal.gasUsed.toString());  
 
       const c = await voting.getCandidate(id, 1);
       expect(c.voteCount).to.equal(1);
