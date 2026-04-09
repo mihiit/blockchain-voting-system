@@ -1,0 +1,17 @@
+{
+  "name": "blockchain-voting",
+  "version": "1.0.0",
+  "description": "Blockchain-Based Secure Voting System - A decentralized application (dApp) that allows users to create and participate in secure voting processes using blockchain technology.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "test": "cross-env UV_THREADPOOL_SIZE=1 hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "cross-env": "^10.1.0",
+    "hardhat": "^2.19.0"
+  }
+}
